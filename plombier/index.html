@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plombier Pro - Votre Plombier de Confiance</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; }
+
+        /* Header */
+        header {
+            background: #1a5276;
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header h1 { font-size: 1.5rem; }
+        header h1 span { color: #5dade2; }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: #5dade2; }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1a5276 0%, #2e86c1 100%);
+            color: white;
+            padding: 160px 20px 100px;
+            text-align: center;
+        }
+        .hero h2 { font-size: 2.8rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px; opacity: 0.9; }
+        .hero .cta-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        .btn-primary { background: #e74c3c; color: white; }
+        .btn-secondary { background: white; color: #1a5276; }
+
+        /* Urgence banner */
+        .urgence {
+            background: #e74c3c;
+            color: white;
+            text-align: center;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .urgence a { color: white; text-decoration: underline; }
+
+        /* Sections */
+        section { padding: 80px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: #1a5276;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 35px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-card .icon { font-size: 3rem; margin-bottom: 15px; }
+        .service-card h3 { color: #1a5276; margin-bottom: 10px; font-size: 1.3rem; }
+        .service-card p { color: #666; line-height: 1.6; }
+
+        /* Pourquoi nous */
+        .why-us { background: #f4f9fd; }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .feature { text-align: center; padding: 20px; }
+        .feature .icon { font-size: 2.5rem; margin-bottom: 10px; }
+        .feature h3 { color: #1a5276; margin-bottom: 8px; }
+        .feature p { color: #666; }
+
+        /* Tarifs */
+        .tarifs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .tarif-card {
+            background: white;
+            border-radius: 12px;
+            padding: 35px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid #2e86c1;
+        }
+        .tarif-card h3 { color: #1a5276; margin-bottom: 10px; }
+        .tarif-card .price { font-size: 2rem; color: #e74c3c; font-weight: 700; margin-bottom: 15px; }
+        .tarif-card ul { list-style: none; text-align: left; }
+        .tarif-card ul li { padding: 8px 0; border-bottom: 1px solid #eee; color: #555; }
+        .tarif-card ul li::before { content: "✓ "; color: #27ae60; font-weight: 700; }
+
+        /* Contact */
+        .contact { background: #1a5276; color: white; }
+        .contact .section-title { color: white; }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .contact-info p { margin-bottom: 15px; font-size: 1.1rem; }
+        .contact-info .icon { margin-right: 10px; }
+        form input, form textarea, form select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        form textarea { height: 120px; resize: vertical; }
+        form button {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        form button:hover { background: #c0392b; }
+
+        /* Footer */
+        footer {
+            background: #0e2f44;
+            color: #aaa;
+            text-align: center;
+            padding: 25px 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero h2 { font-size: 2rem; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Plombier<span>Pro</span></h1>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#tarifs">Tarifs</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h2>Votre Plombier de Confiance</h2>
+    <p>Intervention rapide 7j/7 pour tous vos problèmes de plomberie. Devis gratuit et sans engagement.</p>
+    <div class="cta-buttons">
+        <a href="tel:+33600000000" class="btn btn-primary">Appeler Maintenant</a>
+        <a href="#contact" class="btn btn-secondary">Devis Gratuit</a>
+    </div>
+</section>
+
+<div class="urgence">
+    Urgence plomberie ? Nous intervenons en moins de 30 minutes ! <a href="tel:+33600000000">06 00 00 00 00</a>
+</div>
+
+<section id="services">
+    <div class="container">
+        <h2 class="section-title">Nos Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon">🔧</div>
+                <h3>Dépannage Urgent</h3>
+                <p>Fuite d'eau, canalisation bouchée, panne de chauffe-eau. Intervention rapide 24h/24.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🚿</div>
+                <h3>Salle de Bain</h3>
+                <p>Installation et rénovation complète de votre salle de bain. Douche, baignoire, lavabo.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🔥</div>
+                <h3>Chauffage</h3>
+                <p>Installation, entretien et dépannage de chaudière, radiateurs et plancher chauffant.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🏠</div>
+                <h3>Rénovation</h3>
+                <p>Rénovation complète de vos installations sanitaires et de plomberie.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">💧</div>
+                <h3>Détection de Fuites</h3>
+                <p>Recherche et détection de fuites avec équipement professionnel de pointe.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🛁</div>
+                <h3>Débouchage</h3>
+                <p>Débouchage de canalisations, WC, évier et tout type de conduite.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="why-us" id="pourquoi">
+    <div class="container">
+        <h2 class="section-title">Pourquoi Nous Choisir ?</h2>
+        <div class="features">
+            <div class="feature">
+                <div class="icon">⚡</div>
+                <h3>Intervention Rapide</h3>
+                <p>Sur place en moins de 30 minutes dans toute la ville.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">💰</div>
+                <h3>Prix Transparents</h3>
+                <p>Devis gratuit avant intervention. Aucun frais caché.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🏆</div>
+                <h3>15 Ans d'Expérience</h3>
+                <p>Artisan qualifié et certifié RGE pour tous vos travaux.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">✅</div>
+                <h3>Garantie 2 Ans</h3>
+                <p>Tous nos travaux sont garantis 2 ans pièces et main d'oeuvre.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="tarifs">
+    <div class="container">
+        <h2 class="section-title">Nos Tarifs</h2>
+        <div class="tarifs-grid">
+            <div class="tarif-card">
+                <h3>Dépannage</h3>
+                <div class="price">À partir de 59€</div>
+                <ul>
+                    <li>Déplacement inclus</li>
+                    <li>Diagnostic gratuit</li>
+                    <li>Intervention sous 30 min</li>
+                    <li>Garantie 2 ans</li>
+                </ul>
+            </div>
+            <div class="tarif-card">
+                <h3>Installation</h3>
+                <div class="price">Sur devis</div>
+                <ul>
+                    <li>Devis gratuit sous 24h</li>
+                    <li>Matériel de qualité</li>
+                    <li>Installation soignée</li>
+                    <li>Garantie 2 ans</li>
+                </ul>
+            </div>
+            <div class="tarif-card">
+                <h3>Rénovation</h3>
+                <div class="price">Sur devis</div>
+                <ul>
+                    <li>Étude personnalisée</li>
+                    <li>Plans 3D inclus</li>
+                    <li>Suivi de chantier</li>
+                    <li>Garantie décennale</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="container">
+        <h2 class="section-title">Contactez-Nous</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <p><span class="icon">📍</span> 12 Rue de la Plomberie, 75000 Paris</p>
+                <p><span class="icon">📞</span> 06 00 00 00 00</p>
+                <p><span class="icon">📧</span> contact@plombierpro.fr</p>
+                <p><span class="icon">🕐</span> Lun - Sam : 7h - 20h | Urgences : 24h/24</p>
+            </div>
+            <form>
+                <input type="text" placeholder="Votre nom" required>
+                <input type="email" placeholder="Votre email" required>
+                <input type="tel" placeholder="Votre téléphone" required>
+                <select>
+                    <option value="">Type d'intervention</option>
+                    <option>Dépannage urgent</option>
+                    <option>Installation</option>
+                    <option>Rénovation</option>
+                    <option>Entretien</option>
+                </select>
+                <textarea placeholder="Décrivez votre problème..."></textarea>
+                <button type="submit">Envoyer ma Demande</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 PlombierPro - Tous droits réservés | Artisan certifié RGE</p>
+</footer>
+
+</body>
+</html>

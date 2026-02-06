@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Belle Assiette - Restaurant Gastronomique</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; }
+
+        /* Header */
+        header {
+            background: rgba(30, 30, 30, 0.95);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header h1 { font-size: 1.4rem; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; }
+        header h1 span { color: #c0392b; font-weight: 600; }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: #c0392b; }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1e1e1e 0%, #3e2723 50%, #c0392b 100%);
+            color: white;
+            padding: 200px 20px 140px;
+            text-align: center;
+        }
+        .hero .tagline {
+            font-size: 0.9rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #c0392b;
+            margin-bottom: 15px;
+        }
+        .hero h2 {
+            font-size: 3.2rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+        .hero p { font-size: 1.1rem; max-width: 550px; margin: 0 auto 40px; opacity: 0.8; }
+        .btn {
+            display: inline-block;
+            padding: 15px 45px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        .btn-primary { background: #c0392b; color: white; }
+        .btn-primary:hover { background: #a93226; }
+        .btn-outline { border: 1px solid rgba(255,255,255,0.5); color: white; margin-left: 15px; }
+        .btn-outline:hover { background: white; color: #1e1e1e; }
+
+        /* Sections */
+        section { padding: 80px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #c0392b;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        /* À propos */
+        .about { background: #fdf6f3; }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-text h3 {
+            color: #c0392b;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        .about-text p { color: #555; line-height: 1.8; margin-bottom: 15px; }
+        .about-image {
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, #3e2723, #c0392b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+
+        /* Menu */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+        .menu-category {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        .menu-category h3 {
+            color: #c0392b;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .menu-item { padding: 15px 0; border-bottom: 1px dotted #e0e0e0; }
+        .menu-item:last-child { border-bottom: none; }
+        .menu-item-header { display: flex; justify-content: space-between; align-items: baseline; }
+        .menu-item-header h4 { color: #2c2c2c; font-weight: 500; }
+        .menu-item-header .price { color: #c0392b; font-weight: 600; font-size: 1.1rem; }
+        .menu-item p { color: #888; font-size: 0.9rem; margin-top: 5px; font-style: italic; }
+
+        /* Formules */
+        .formules { background: #1e1e1e; color: white; }
+        .formules .section-title { color: white; }
+        .formules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .formule-card {
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 40px;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+        .formule-card:hover { border-color: #c0392b; }
+        .formule-card h3 {
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .formule-card .price {
+            font-size: 2.5rem;
+            color: #c0392b;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        .formule-card ul { list-style: none; }
+        .formule-card ul li { padding: 8px 0; color: #aaa; border-bottom: 1px solid rgba(255,255,255,0.05); }
+
+        /* Galerie */
+        .galerie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 5px;
+        }
+        .galerie-item {
+            aspect-ratio: 1;
+            background: #fdf6f3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .galerie-item:hover { transform: scale(1.02); }
+
+        /* Avis */
+        .avis { background: #fdf6f3; }
+        .avis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .avis-card {
+            background: white;
+            padding: 35px;
+            position: relative;
+        }
+        .avis-card .stars { color: #f39c12; font-size: 1.1rem; margin-bottom: 12px; display: block; }
+        .avis-card p { color: #555; line-height: 1.7; font-style: italic; margin-bottom: 15px; }
+        .avis-card .author { color: #2c2c2c; font-weight: 600; font-size: 0.9rem; }
+
+        /* Réservation / Contact */
+        .reservation { background: #3e2723; color: white; }
+        .reservation .section-title { color: white; }
+        .reservation .section-subtitle { color: #e6a89c; }
+        .reservation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        .reservation-info h3 {
+            color: #e6a89c;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .reservation-info p { margin-bottom: 12px; color: #ccc; font-size: 1.05rem; }
+        .horaires { margin-top: 25px; }
+        .horaires table { width: 100%; }
+        .horaires td { padding: 8px 0; color: #ccc; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .horaires td:last-child { text-align: right; }
+        form input, form textarea, form select {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.05);
+            color: white;
+            font-size: 0.95rem;
+            font-family: inherit;
+        }
+        form input::placeholder, form textarea::placeholder { color: #999; }
+        form select { color: #999; }
+        form select option { color: #333; background: white; }
+        form textarea { height: 100px; resize: vertical; }
+        form button {
+            background: #c0392b;
+            color: white;
+            border: none;
+            padding: 15px 50px;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        form button:hover { background: #a93226; }
+
+        /* Footer */
+        footer {
+            background: #1e1e1e;
+            color: #666;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero h2 { font-size: 2rem; }
+            .about-content { grid-template-columns: 1fr; }
+            .reservation-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>La Belle <span>Assiette</span></h1>
+        <nav>
+            <a href="#carte">La Carte</a>
+            <a href="#formules">Formules</a>
+            <a href="#galerie">Galerie</a>
+            <a href="#reservation">Réserver</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="tagline">Restaurant Gastronomique</div>
+    <h2>Une Cuisine d'Exception</h2>
+    <p>Des produits frais et locaux sublimés par notre chef pour une expérience culinaire inoubliable.</p>
+    <div>
+        <a href="#reservation" class="btn btn-primary">Réserver une Table</a>
+        <a href="#carte" class="btn btn-outline">Voir la Carte</a>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Notre Histoire</h3>
+                <p>Depuis 2010, La Belle Assiette vous accueille dans un cadre chaleureux et raffiné. Notre chef, passionné par la cuisine française, sélectionne chaque jour les meilleurs produits du marché.</p>
+                <p>Notre philosophie : des produits frais, de saison, issus de producteurs locaux, sublimés avec créativité et respect des saveurs authentiques.</p>
+            </div>
+            <div class="about-image">🍽️</div>
+        </div>
+    </div>
+</section>
+
+<section id="carte">
+    <div class="container">
+        <h2 class="section-title">Notre Carte</h2>
+        <p class="section-subtitle">Produits frais & de saison</p>
+        <div class="menu-grid">
+            <div class="menu-category">
+                <h3>Entrées</h3>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h4>Velouté de Saison</h4>
+                        <span class="price">9 €</span>
+                    </div>
+                    <p>Soupe de légumes du marché, crème fraîche et croûtons maison</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h4>Foie Gras Maison</h4>
+                        <span class="price">16 €</span>
+                    </div>
+                    <p>Mi-cuit, chutney de figues et toast brioché</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h4>Salade du Chef</h4>
+                        <span class="price">12 €</span>
+                    </div>
+                    <p>Mesclun, chèvre chaud, noix, miel et vinaigrette balsamique</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h4>Tartare de Saumon</h4>
+                        <span class="price">14 €</span>
+                    </div>
+                    <p>Saumon frais, avocat, agrumes et sésame</p>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Plats</h3>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h4>Filet de Boeuf</h4>
+                        <span class="price">26 €</span>
+                    </div>
+                    <p>Race Aubrac, sauce au poivre, gratin dauphinois</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h4>Suprême de Volaille</h4>
+                        <span class="price">19 €</span>
+                    </div>
+                    <p>Fermier, jus aux morilles, purée de céleri</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h4>Pavé de Saumon</h4>
+                        <span class="price">22 €</span>
+                    </div>
+                    <p>Label Rouge, beurre blanc, riz pilaf et légumes croquants</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h4>Risotto du Moment</h4>
+                        <span class="price">18 €</span>
+                    </div>
+                    <p>Selon l'inspiration du chef et les produits du marché</p>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Desserts</h3>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h4>Fondant au Chocolat</h4>
+                        <span class="price">10 €</span>
+                    </div>
+                    <p>Chocolat Valrhona 70%, coeur coulant, glace vanille</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h4>Crème Brûlée</h4>
+                        <span class="price">9 €</span>
+                    </div>
+                    <p>Vanille de Madagascar, caramel craquant</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h4>Tarte Tatin</h4>
+                        <span class="price">10 €</span>
+                    </div>
+                    <p>Pommes caramélisées, pâte feuilletée, crème fraîche</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h4>Assiette de Fromages</h4>
+                        <span class="price">11 €</span>
+                    </div>
+                    <p>Sélection affinée par notre fromager</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="formules" id="formules">
+    <div class="container">
+        <h2 class="section-title">Nos Formules</h2>
+        <p class="section-subtitle">Du lundi au vendredi, le midi</p>
+        <div class="formules-grid">
+            <div class="formule-card">
+                <h3>Express</h3>
+                <div class="price">16 €</div>
+                <ul>
+                    <li>Plat du jour</li>
+                    <li>Café gourmand</li>
+                </ul>
+            </div>
+            <div class="formule-card">
+                <h3>Déjeuner</h3>
+                <div class="price">24 €</div>
+                <ul>
+                    <li>Entrée + Plat</li>
+                    <li>ou Plat + Dessert</li>
+                    <li>Café inclus</li>
+                </ul>
+            </div>
+            <div class="formule-card">
+                <h3>Gourmand</h3>
+                <div class="price">32 €</div>
+                <ul>
+                    <li>Entrée</li>
+                    <li>Plat</li>
+                    <li>Dessert</li>
+                    <li>Café inclus</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="galerie">
+    <div class="container">
+        <h2 class="section-title">Notre Galerie</h2>
+        <p class="section-subtitle">L'art dans l'assiette</p>
+        <div class="galerie-grid">
+            <div class="galerie-item">🥗</div>
+            <div class="galerie-item">🥩</div>
+            <div class="galerie-item">🍝</div>
+            <div class="galerie-item">🍰</div>
+            <div class="galerie-item">🍷</div>
+            <div class="galerie-item">🧀</div>
+        </div>
+    </div>
+</section>
+
+<section class="avis" id="avis">
+    <div class="container">
+        <h2 class="section-title">Avis Clients</h2>
+        <p class="section-subtitle">Ils ont aimé leur expérience</p>
+        <div class="avis-grid">
+            <div class="avis-card">
+                <span class="stars">★★★★★</span>
+                <p>Un repas exceptionnel du début à la fin. Le filet de boeuf était parfaitement cuit et le fondant au chocolat divin. Service impeccable.</p>
+                <div class="author">— Pierre D.</div>
+            </div>
+            <div class="avis-card">
+                <span class="stars">★★★★★</span>
+                <p>Cadre magnifique, cuisine raffinée et un accueil chaleureux. La formule déjeuner est un excellent rapport qualité-prix. On y retourne !</p>
+                <div class="author">— Claire B.</div>
+            </div>
+            <div class="avis-card">
+                <span class="stars">★★★★★</span>
+                <p>Nous avons fêté notre anniversaire ici. L'équipe nous a réservé une attention particulière. Les plats sont savoureux et généreux.</p>
+                <div class="author">— Jean & Marie F.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="reservation" id="reservation">
+    <div class="container">
+        <h2 class="section-title">Réserver une Table</h2>
+        <p class="section-subtitle">Par téléphone ou en ligne</p>
+        <div class="reservation-grid">
+            <div class="reservation-info">
+                <h3>Nous Trouver</h3>
+                <p>📍 8 Place du Marché, 75000 Paris</p>
+                <p>📞 01 00 00 00 00</p>
+                <p>📧 reservation@labelleassiette.fr</p>
+                <div class="horaires">
+                    <h3>Horaires</h3>
+                    <table>
+                        <tr><td>Lundi</td><td>Fermé</td></tr>
+                        <tr><td>Mardi - Samedi</td><td>12h - 14h | 19h - 22h</td></tr>
+                        <tr><td>Dimanche</td><td>12h - 14h30</td></tr>
+                    </table>
+                </div>
+            </div>
+            <form>
+                <input type="text" placeholder="Votre nom" required>
+                <input type="tel" placeholder="Votre téléphone" required>
+                <input type="email" placeholder="Votre email">
+                <input type="date" required>
+                <select>
+                    <option value="">Nombre de convives</option>
+                    <option>1 personne</option>
+                    <option>2 personnes</option>
+                    <option>3-4 personnes</option>
+                    <option>5-6 personnes</option>
+                    <option>7+ personnes (nous contacter)</option>
+                </select>
+                <select>
+                    <option value="">Service</option>
+                    <option>Déjeuner (12h - 14h)</option>
+                    <option>Dîner (19h - 22h)</option>
+                </select>
+                <textarea placeholder="Demande particulière (allergies, occasion spéciale...)"></textarea>
+                <button type="submit">Réserver</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 La Belle Assiette - Tous droits réservés</p>
+</footer>
+
+</body>
+</html>

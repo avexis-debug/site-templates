@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon Élégance - Coiffeur & Beauté</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; }
+
+        /* Header */
+        header {
+            background: #2c2c2c;
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header h1 { font-size: 1.5rem; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; }
+        header h1 span { color: #d4a574; font-weight: 600; }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: #d4a574; }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #2c2c2c 0%, #4a4a4a 50%, #d4a574 100%);
+            color: white;
+            padding: 180px 20px 120px;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .hero p { font-size: 1.1rem; max-width: 550px; margin: 0 auto 35px; opacity: 0.85; letter-spacing: 1px; }
+        .btn {
+            display: inline-block;
+            padding: 14px 40px;
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        .btn-primary { background: #d4a574; color: white; }
+        .btn-primary:hover { background: #c4955f; }
+        .btn-outline { border: 2px solid white; color: white; margin-left: 15px; }
+        .btn-outline:hover { background: white; color: #2c2c2c; }
+
+        /* Sections */
+        section { padding: 80px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            color: #2c2c2c;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #d4a574;
+            margin-bottom: 50px;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        /* Prestations */
+        .prestations { background: #faf8f5; }
+        .prestations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .prestation-card {
+            background: white;
+            padding: 40px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .prestation-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .prestation-card .icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .prestation-card h3 {
+            color: #2c2c2c;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .prestation-card p { color: #777; line-height: 1.7; }
+
+        /* Tarifs */
+        .tarifs-list { max-width: 700px; margin: 0 auto; }
+        .tarif-category { margin-bottom: 40px; }
+        .tarif-category h3 {
+            color: #d4a574;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 15px;
+        }
+        .tarif-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px dotted #ddd;
+        }
+        .tarif-item .name { color: #555; }
+        .tarif-item .price { color: #2c2c2c; font-weight: 600; font-size: 1.1rem; }
+
+        /* Galerie */
+        .galerie { background: #2c2c2c; color: white; }
+        .galerie .section-title { color: white; }
+        .galerie .section-subtitle { color: #d4a574; }
+        .galerie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 5px;
+        }
+        .galerie-item {
+            aspect-ratio: 1;
+            background: #3a3a3a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            transition: opacity 0.3s;
+            cursor: pointer;
+        }
+        .galerie-item:hover { opacity: 0.8; }
+
+        /* Avis */
+        .avis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .avis-card {
+            background: #faf8f5;
+            padding: 35px;
+            position: relative;
+        }
+        .avis-card::before {
+            content: """;
+            font-size: 4rem;
+            color: #d4a574;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+        .avis-card p { color: #555; line-height: 1.7; font-style: italic; margin-bottom: 15px; }
+        .avis-card .author { color: #2c2c2c; font-weight: 600; }
+        .avis-card .stars { color: #d4a574; }
+
+        /* Contact */
+        .contact { background: #faf8f5; }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        .contact-info h3 {
+            color: #d4a574;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .contact-info p { margin-bottom: 12px; color: #555; font-size: 1.05rem; }
+        .horaires { margin-top: 25px; }
+        .horaires table { width: 100%; }
+        .horaires td { padding: 8px 0; color: #555; border-bottom: 1px solid #eee; }
+        .horaires td:last-child { text-align: right; font-weight: 500; }
+        form input, form textarea, form select {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            background: white;
+            font-size: 0.95rem;
+            font-family: inherit;
+        }
+        form textarea { height: 120px; resize: vertical; }
+        form button {
+            background: #d4a574;
+            color: white;
+            border: none;
+            padding: 14px 50px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        form button:hover { background: #c4955f; }
+
+        /* Footer */
+        footer {
+            background: #2c2c2c;
+            color: #888;
+            text-align: center;
+            padding: 30px 20px;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero h2 { font-size: 2rem; letter-spacing: 3px; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Salon <span>Élégance</span></h1>
+        <nav>
+            <a href="#prestations">Prestations</a>
+            <a href="#tarifs">Tarifs</a>
+            <a href="#galerie">Galerie</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h2>L'Art de la Coiffure</h2>
+    <p>Un espace dédié à votre beauté et votre bien-être au coeur de la ville.</p>
+    <div>
+        <a href="#tarifs" class="btn btn-primary">Nos Tarifs</a>
+        <a href="tel:+33100000000" class="btn btn-outline">Prendre RDV</a>
+    </div>
+</section>
+
+<section class="prestations" id="prestations">
+    <div class="container">
+        <h2 class="section-title">Nos Prestations</h2>
+        <p class="section-subtitle">Des soins sur-mesure pour sublimer votre beauté</p>
+        <div class="prestations-grid">
+            <div class="prestation-card">
+                <div class="icon">✂️</div>
+                <h3>Coupe & Coiffage</h3>
+                <p>Coupe femme, homme et enfant. Nos experts vous conseillent pour trouver le style qui vous correspond.</p>
+            </div>
+            <div class="prestation-card">
+                <div class="icon">🎨</div>
+                <h3>Coloration</h3>
+                <p>Coloration, mèches, balayage, ombré. Nous utilisons des produits haut de gamme pour un résultat naturel.</p>
+            </div>
+            <div class="prestation-card">
+                <div class="icon">💆</div>
+                <h3>Soins Capillaires</h3>
+                <p>Soins profonds, kératine, botox capillaire. Redonnez vie et éclat à vos cheveux.</p>
+            </div>
+            <div class="prestation-card">
+                <div class="icon">👰</div>
+                <h3>Coiffure Événement</h3>
+                <p>Mariage, soirée, cérémonie. Des coiffures élégantes pour vos occasions spéciales.</p>
+            </div>
+            <div class="prestation-card">
+                <div class="icon">🧔</div>
+                <h3>Barbier</h3>
+                <p>Taille de barbe, rasage traditionnel, soins du visage. L'art du barbier au masculin.</p>
+            </div>
+            <div class="prestation-card">
+                <div class="icon">💅</div>
+                <h3>Beauté & Esthétique</h3>
+                <p>Manucure, épilation, soin du visage. Prenez soin de vous de la tête aux pieds.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="tarifs">
+    <div class="container">
+        <h2 class="section-title">Nos Tarifs</h2>
+        <p class="section-subtitle">Qualité premium, prix justes</p>
+        <div class="tarifs-list">
+            <div class="tarif-category">
+                <h3>Femme</h3>
+                <div class="tarif-item"><span class="name">Coupe + Brushing</span><span class="price">45 €</span></div>
+                <div class="tarif-item"><span class="name">Brushing seul</span><span class="price">25 €</span></div>
+                <div class="tarif-item"><span class="name">Coloration</span><span class="price">55 €</span></div>
+                <div class="tarif-item"><span class="name">Mèches / Balayage</span><span class="price">65 €</span></div>
+                <div class="tarif-item"><span class="name">Chignon / Coiffure événement</span><span class="price">60 €</span></div>
+                <div class="tarif-item"><span class="name">Soin Kératine</span><span class="price">80 €</span></div>
+            </div>
+            <div class="tarif-category">
+                <h3>Homme</h3>
+                <div class="tarif-item"><span class="name">Coupe homme</span><span class="price">22 €</span></div>
+                <div class="tarif-item"><span class="name">Coupe + Barbe</span><span class="price">32 €</span></div>
+                <div class="tarif-item"><span class="name">Taille de barbe</span><span class="price">15 €</span></div>
+                <div class="tarif-item"><span class="name">Coloration homme</span><span class="price">30 €</span></div>
+            </div>
+            <div class="tarif-category">
+                <h3>Enfant</h3>
+                <div class="tarif-item"><span class="name">Coupe enfant (-10 ans)</span><span class="price">15 €</span></div>
+                <div class="tarif-item"><span class="name">Coupe ado (10-16 ans)</span><span class="price">18 €</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="galerie" id="galerie">
+    <div class="container">
+        <h2 class="section-title">Notre Galerie</h2>
+        <p class="section-subtitle">Découvrez nos réalisations</p>
+        <div class="galerie-grid">
+            <div class="galerie-item">💇‍♀️</div>
+            <div class="galerie-item">💇‍♂️</div>
+            <div class="galerie-item">💆‍♀️</div>
+            <div class="galerie-item">✨</div>
+            <div class="galerie-item">🪞</div>
+            <div class="galerie-item">💈</div>
+        </div>
+    </div>
+</section>
+
+<section id="avis">
+    <div class="container">
+        <h2 class="section-title">Avis Clients</h2>
+        <p class="section-subtitle">Ce que nos clients disent de nous</p>
+        <div class="avis-grid">
+            <div class="avis-card">
+                <p>Un salon magnifique avec une équipe au top ! Ma coupe est exactement ce que je voulais. Je recommande à 100%.</p>
+                <span class="stars">★★★★★</span>
+                <div class="author">— Sophie M.</div>
+            </div>
+            <div class="avis-card">
+                <p>Ambiance chaleureuse, conseils personnalisés et résultat impeccable. Mon salon préféré depuis 3 ans.</p>
+                <span class="stars">★★★★★</span>
+                <div class="author">— Thomas R.</div>
+            </div>
+            <div class="avis-card">
+                <p>Ma coloration est sublime et naturelle. Les produits utilisés sont de grande qualité. Merci pour ce moment de détente !</p>
+                <span class="stars">★★★★★</span>
+                <div class="author">— Marie L.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="container">
+        <h2 class="section-title">Prendre Rendez-Vous</h2>
+        <p class="section-subtitle">Par téléphone ou en ligne</p>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Informations</h3>
+                <p>📍 25 Avenue de la Beauté, 75000 Paris</p>
+                <p>📞 01 00 00 00 00</p>
+                <p>📧 contact@salon-elegance.fr</p>
+                <div class="horaires">
+                    <h3>Horaires</h3>
+                    <table>
+                        <tr><td>Lundi</td><td>Fermé</td></tr>
+                        <tr><td>Mardi - Vendredi</td><td>9h00 - 19h00</td></tr>
+                        <tr><td>Samedi</td><td>9h00 - 18h00</td></tr>
+                        <tr><td>Dimanche</td><td>Fermé</td></tr>
+                    </table>
+                </div>
+            </div>
+            <form>
+                <input type="text" placeholder="Votre nom" required>
+                <input type="tel" placeholder="Votre téléphone" required>
+                <input type="email" placeholder="Votre email">
+                <select>
+                    <option value="">Prestation souhaitée</option>
+                    <option>Coupe Femme</option>
+                    <option>Coupe Homme</option>
+                    <option>Coloration</option>
+                    <option>Soins</option>
+                    <option>Coiffure Événement</option>
+                    <option>Barbier</option>
+                </select>
+                <textarea placeholder="Précisions ou date souhaitée..."></textarea>
+                <button type="submit">Demander un Rendez-Vous</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Salon Élégance - Tous droits réservés</p>
+</footer>
+
+</body>
+</html>
