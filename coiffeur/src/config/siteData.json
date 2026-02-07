@@ -1,0 +1,34 @@
+{
+  "name": "L'Atelier de Claire",
+  "category": "Salon de coiffure",
+  "phone": "+33 1 42 36 78 90",
+  "phoneDisplay": "01 42 36 78 90",
+  "address": "27 Rue du Faubourg Saint-Antoine, 75011 Paris",
+  "city": "Paris",
+  "description": "Salon de coiffure haut de gamme au coeur de Paris. Nos coiffeurs experts subliment votre style avec des techniques innovantes et des produits professionnels de qualite. Coupes, colorations, soins capillaires et coiffures evenementielles dans un cadre elegant et chaleureux.",
+  "metaDescription": "L'Atelier de Claire - Salon de coiffure haut de gamme a Paris 11e. Coupes, colorations, balayages, soins capillaires. Prenez rendez-vous au 01 42 36 78 90.",
+  "color": "#1a1a2e",
+  "accentColor": "#c9a96e",
+  "rating": 4.8,
+  "reviewCount": 247,
+  "googleMapsUrl": "https://www.google.com/maps/place/27+Rue+du+Faubourg+Saint-Antoine,+75011+Paris",
+  "hours": "Mar-Sam 9h-19h",
+  "heroImage": "/images/hero.jpg",
+  "aboutImage": "/images/about.jpg",
+  "services": [
+    { "icon": "scissors", "title": "Coupe Femme", "desc": "Coupe personnalisee, shampoing et coiffage inclus. Nos experts analysent votre visage pour la coupe ideale." },
+    { "icon": "scissors", "title": "Coupe Homme", "desc": "Coupe tendance ou classique, adaptee a votre style. Finitions soignees au rasoir." },
+    { "icon": "coloring", "title": "Coloration", "desc": "Coloration professionnelle avec des produits premium. Couverture parfaite des cheveux blancs." },
+    { "icon": "highlights", "title": "Balayage & Meches", "desc": "Techniques de balayage naturel pour un resultat lumineux et dimension dans vos cheveux." },
+    { "icon": "brush", "title": "Brushing", "desc": "Mise en forme elegante avec des produits de soin. Volume et brillance garantis." },
+    { "icon": "treatment", "title": "Soins Capillaires", "desc": "Traitements nourrissants et reparateurs pour des cheveux en pleine sante et pleins de vitalite." },
+    { "icon": "beard", "title": "Barbe & Moustache", "desc": "Taille et entretien de la barbe. Rasage traditionnel au blaireau disponible." },
+    { "icon": "styling", "title": "Coiffure Evenementielle", "desc": "Chignons, coiffures de mariee et mises en beaute pour vos evenements speciaux." }
+  ],
+  "gallery": [
+    { "src": "/images/gallery-1.jpg", "alt": "Coupe femme moderne avec balayage blond" },
+    { "src": "/images/gallery-2.jpg", "alt": "Coloration cuivree sur cheveux longs" },
+    { "src": "/images/gallery-3.jpg", "alt": "Coupe homme tendance avec degrade" },
+    { "src": "/images/gallery-4.jpg", "alt": "Chignon elegant pour mariage" }
+  ]
+}
