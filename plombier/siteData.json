@@ -1,0 +1,41 @@
+{
+  "name": "PlombierPro",
+  "category": "Plombier",
+  "phone": "+33 6 00 00 00 00",
+  "phoneDisplay": "06 00 00 00 00",
+  "email": "contact@plombierpro.fr",
+  "address": "12 Rue de la Plomberie, 75000 Paris",
+  "city": "Paris",
+  "hours": "Lun - Sam : 7h - 20h | Urgences : 24h/24",
+  "description": "Plombier de confiance a Paris. Intervention rapide 7j/7 pour tous vos problemes de plomberie. Devis gratuit et sans engagement.",
+  "metaDescription": "PlombierPro - Votre plombier de confiance a Paris. Depannage urgent, installation, renovation. Intervention en 30 min. Devis gratuit.",
+  "accentColor": "#2e86c1",
+  "accentColorDark": "#1a5276",
+  "urgenceColor": "#e74c3c",
+  "heroTitle": "Votre Plombier de Confiance",
+  "heroSubtitle": "Intervention rapide 7j/7 pour tous vos problemes de plomberie. Devis gratuit et sans engagement.",
+  "urgenceText": "Urgence plomberie ? Nous intervenons en moins de 30 minutes !",
+  "services": [
+    { "icon": "wrench", "title": "Depannage Urgent", "desc": "Fuite d'eau, canalisation bouchee, panne de chauffe-eau. Intervention rapide 24h/24." },
+    { "icon": "shower", "title": "Salle de Bain", "desc": "Installation et renovation complete de votre salle de bain. Douche, baignoire, lavabo." },
+    { "icon": "flame", "title": "Chauffage", "desc": "Installation, entretien et depannage de chaudiere, radiateurs et plancher chauffant." },
+    { "icon": "house", "title": "Renovation", "desc": "Renovation complete de vos installations sanitaires et de plomberie." },
+    { "icon": "droplet", "title": "Detection de Fuites", "desc": "Recherche et detection de fuites avec equipement professionnel de pointe." },
+    { "icon": "pipe", "title": "Debouchage", "desc": "Debouchage de canalisations, WC, evier et tout type de conduite." }
+  ],
+  "whyChooseUs": [
+    { "icon": "lightning", "title": "Intervention Rapide", "desc": "Sur place en moins de 30 minutes dans toute la ville." },
+    { "icon": "money", "title": "Prix Transparents", "desc": "Devis gratuit avant intervention. Aucun frais cache." },
+    { "icon": "trophy", "title": "15 Ans d'Experience", "desc": "Artisan qualifie et certifie RGE pour tous vos travaux." },
+    { "icon": "check", "title": "Garantie 2 Ans", "desc": "Tous nos travaux sont garantis 2 ans pieces et main d'oeuvre." }
+  ],
+  "tarifs": [
+    { "title": "Depannage", "price": "A partir de 59 EUR", "items": ["Deplacement inclus", "Diagnostic gratuit", "Intervention sous 30 min", "Garantie 2 ans"] },
+    { "title": "Installation", "price": "Sur devis", "items": ["Devis gratuit sous 24h", "Materiel de qualite", "Installation soignee", "Garantie 2 ans"] },
+    { "title": "Renovation", "price": "Sur devis", "items": ["Etude personnalisee", "Plans 3D inclus", "Suivi de chantier", "Garantie decennale"] }
+  ],
+  "testimonials": [
+    { "name": "Client satisfait", "text": "Intervention rapide et efficace. Le plombier etait ponctuel et professionnel. Je recommande." }
+  ],
+  "formOptions": ["Depannage urgent", "Installation", "Renovation", "Entretien"]
+}

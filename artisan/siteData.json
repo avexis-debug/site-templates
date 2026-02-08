@@ -1,0 +1,57 @@
+{
+  "name": "ArtisanPro",
+  "category": "Artisan",
+  "phone": "+33 6 00 00 00 00",
+  "phoneDisplay": "06 00 00 00 00",
+  "email": "contact@artisanpro.fr",
+  "address": "15 Rue des Artisans, 75000 Paris",
+  "city": "Paris",
+  "hours": "Lun - Ven : 7h30 - 18h | Sam : 8h - 12h",
+  "description": "Artisan qualifie depuis 20 ans. Maconnerie, peinture, carrelage, isolation et renovation complete. Devis gratuit sous 48h.",
+  "metaDescription": "ArtisanPro - Artisan certifie RGE & Qualibat a Paris. Maconnerie, peinture, carrelage, isolation, renovation. Devis gratuit.",
+  "accentColor": "#e67e22",
+  "badge": "Artisan certifie RGE & Qualibat",
+  "heroTitle": "Travaux & Renovation",
+  "heroSubtitle": "Artisan qualifie depuis 20 ans. Maconnerie, peinture, carrelage, isolation et renovation complete. Devis gratuit sous 48h.",
+  "trustStats": [
+    { "value": "20+", "label": "Ans d'experience" },
+    { "value": "850+", "label": "Chantiers realises" },
+    { "value": "100%", "label": "Clients satisfaits" },
+    { "value": "10 ans", "label": "Garantie decennale" }
+  ],
+  "services": [
+    { "icon": "masonry", "title": "Maconnerie", "desc": "Construction, extension, murs porteurs, ouvertures, ravalement de facade et reparations structurelles." },
+    { "icon": "painting", "title": "Peinture & Decoration", "desc": "Peinture interieure et exterieure, papier peint, enduits decoratifs, lasure et traitement bois." },
+    { "icon": "tiling", "title": "Carrelage & Sol", "desc": "Pose de carrelage, faience, parquet, sol vinyle et chape. Salle de bain, cuisine et terrasse." },
+    { "icon": "renovation", "title": "Renovation Complete", "desc": "Renovation de maison et appartement de A a Z. Coordination de tous les corps de metier." },
+    { "icon": "insulation", "title": "Isolation", "desc": "Isolation thermique et phonique : combles, murs, sols. Certifie RGE pour vos aides financieres." },
+    { "icon": "exterior", "title": "Amenagement Exterieur", "desc": "Terrasse, cloture, muret, allee et amenagement paysager. Embellissez vos espaces exterieurs." }
+  ],
+  "process": [
+    { "title": "Premier Contact", "desc": "Appelez-nous ou remplissez le formulaire. Nous vous recontactons sous 24h." },
+    { "title": "Visite & Devis", "desc": "Nous nous deplacons gratuitement pour evaluer vos travaux et vous remettre un devis detaille." },
+    { "title": "Realisation", "desc": "Nos artisans realisent vos travaux dans les regles de l'art, avec un suivi regulier." },
+    { "title": "Reception", "desc": "Inspection finale ensemble. Vous ne payez le solde qu'une fois pleinement satisfait." }
+  ],
+  "realisations": [
+    { "title": "Renovation Maison Ancienne", "desc": "Renovation complete d'une maison de 120m2 - 3 mois de travaux", "tag": "Renovation" },
+    { "title": "Salle de Bain Moderne", "desc": "Creation d'une salle de bain italienne avec douche a l'italienne", "tag": "Carrelage" },
+    { "title": "Terrasse en Pierre", "desc": "Amenagement d'une terrasse de 40m2 avec muret et eclairage", "tag": "Exterieur" }
+  ],
+  "testimonials": [
+    { "name": "Marc D.", "project": "Renovation salle de bain", "text": "Travail soigne et propre. L'equipe a refait entierement notre salle de bain en une semaine. Resultat impeccable, on recommande les yeux fermes !" },
+    { "name": "Nathalie P.", "project": "Terrasse exterieure", "text": "Tres professionnel du debut a la fin. Le devis etait clair, les delais respectes et la qualite de finition est excellente. Merci pour notre nouvelle terrasse !" },
+    { "name": "Laurent & Sophie B.", "project": "Renovation appartement", "text": "Nous avons fait renover notre appartement complet. Coordination parfaite entre les differents corps de metier. Un vrai chef d'orchestre !" }
+  ],
+  "guarantees": [
+    { "icon": "shield", "title": "Garantie Decennale", "desc": "Assurance decennale couvrant tous nos travaux pendant 10 ans." },
+    { "icon": "document", "title": "Devis Detaille", "desc": "Devis gratuit, transparent et sans surprise. Chaque poste est detaille." },
+    { "icon": "certificate", "title": "Certifie RGE", "desc": "Certification RGE pour vos travaux d'isolation. Eligible aux aides de l'Etat." },
+    { "icon": "handshake", "title": "Paiement au Resultat", "desc": "Le solde n'est du qu'apres reception et validation des travaux." }
+  ],
+  "zone": [
+    "Paris et toute l'Ile-de-France",
+    "Deplacement gratuit sous 30 km",
+    "Au-dela : nous consulter"
+  ]
+}

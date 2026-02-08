@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Belle Assiette - Restaurant Gastronomique</title>
+    <meta name="description" content="" id="metaDesc">
+    <title>Chargement...</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; }
@@ -28,7 +29,7 @@
             padding: 0 20px;
         }
         header h1 { font-size: 1.4rem; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; }
-        header h1 span { color: #c0392b; font-weight: 600; }
+        header h1 span { color: var(--accent, #c0392b); font-weight: 600; }
         nav a {
             color: white;
             text-decoration: none;
@@ -39,11 +40,11 @@
             font-size: 0.8rem;
             transition: color 0.3s;
         }
-        nav a:hover { color: #c0392b; }
+        nav a:hover { color: var(--accent, #c0392b); }
 
         /* Hero */
         .hero {
-            background: linear-gradient(135deg, #1e1e1e 0%, #3e2723 50%, #c0392b 100%);
+            background: linear-gradient(135deg, #1e1e1e 0%, #3e2723 50%, var(--accent, #c0392b) 100%);
             color: white;
             padding: 200px 20px 140px;
             text-align: center;
@@ -52,7 +53,7 @@
             font-size: 0.9rem;
             letter-spacing: 5px;
             text-transform: uppercase;
-            color: #c0392b;
+            color: var(--accent, #c0392b);
             margin-bottom: 15px;
         }
         .hero h2 {
@@ -72,7 +73,7 @@
             text-transform: uppercase;
             transition: all 0.3s;
         }
-        .btn-primary { background: #c0392b; color: white; }
+        .btn-primary { background: var(--accent, #c0392b); color: white; }
         .btn-primary:hover { background: #a93226; }
         .btn-outline { border: 1px solid rgba(255,255,255,0.5); color: white; margin-left: 15px; }
         .btn-outline:hover { background: white; color: #1e1e1e; }
@@ -90,13 +91,13 @@
         }
         .section-subtitle {
             text-align: center;
-            color: #c0392b;
+            color: var(--accent, #c0392b);
             margin-bottom: 50px;
             letter-spacing: 2px;
             font-size: 0.9rem;
         }
 
-        /* À propos */
+        /* A propos */
         .about { background: #fdf6f3; }
         .about-content {
             display: grid;
@@ -105,7 +106,7 @@
             align-items: center;
         }
         .about-text h3 {
-            color: #c0392b;
+            color: var(--accent, #c0392b);
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -114,7 +115,7 @@
         .about-text p { color: #555; line-height: 1.8; margin-bottom: 15px; }
         .about-image {
             aspect-ratio: 4/3;
-            background: linear-gradient(135deg, #3e2723, #c0392b);
+            background: linear-gradient(135deg, #3e2723, var(--accent, #c0392b));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -133,7 +134,7 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
         .menu-category h3 {
-            color: #c0392b;
+            color: var(--accent, #c0392b);
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -146,7 +147,7 @@
         .menu-item:last-child { border-bottom: none; }
         .menu-item-header { display: flex; justify-content: space-between; align-items: baseline; }
         .menu-item-header h4 { color: #2c2c2c; font-weight: 500; }
-        .menu-item-header .price { color: #c0392b; font-weight: 600; font-size: 1.1rem; }
+        .menu-item-header .price { color: var(--accent, #c0392b); font-weight: 600; font-size: 1.1rem; }
         .menu-item p { color: #888; font-size: 0.9rem; margin-top: 5px; font-style: italic; }
 
         /* Formules */
@@ -163,7 +164,7 @@
             text-align: center;
             transition: border-color 0.3s;
         }
-        .formule-card:hover { border-color: #c0392b; }
+        .formule-card:hover { border-color: var(--accent, #c0392b); }
         .formule-card h3 {
             font-weight: 300;
             letter-spacing: 2px;
@@ -172,30 +173,12 @@
         }
         .formule-card .price {
             font-size: 2.5rem;
-            color: #c0392b;
+            color: var(--accent, #c0392b);
             font-weight: 300;
             margin-bottom: 20px;
         }
         .formule-card ul { list-style: none; }
         .formule-card ul li { padding: 8px 0; color: #aaa; border-bottom: 1px solid rgba(255,255,255,0.05); }
-
-        /* Galerie */
-        .galerie-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 5px;
-        }
-        .galerie-item {
-            aspect-ratio: 1;
-            background: #fdf6f3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        .galerie-item:hover { transform: scale(1.02); }
 
         /* Avis */
         .avis { background: #fdf6f3; }
@@ -213,7 +196,7 @@
         .avis-card p { color: #555; line-height: 1.7; font-style: italic; margin-bottom: 15px; }
         .avis-card .author { color: #2c2c2c; font-weight: 600; font-size: 0.9rem; }
 
-        /* Réservation / Contact */
+        /* Reservation / Contact */
         .reservation { background: #3e2723; color: white; }
         .reservation .section-title { color: white; }
         .reservation .section-subtitle { color: #e6a89c; }
@@ -249,7 +232,7 @@
         form select option { color: #333; background: white; }
         form textarea { height: 100px; resize: vertical; }
         form button {
-            background: #c0392b;
+            background: var(--accent, #c0392b);
             color: white;
             border: none;
             padding: 15px 50px;
@@ -284,23 +267,23 @@
 
 <header>
     <div class="container">
-        <h1>La Belle <span>Assiette</span></h1>
+        <h1 id="headerName"></h1>
         <nav>
             <a href="#carte">La Carte</a>
             <a href="#formules">Formules</a>
-            <a href="#galerie">Galerie</a>
-            <a href="#reservation">Réserver</a>
+            <a href="#avis">Avis</a>
+            <a href="#reservation" id="navReserveBtn">Reserver</a>
         </nav>
     </div>
 </header>
 
 <section class="hero">
-    <div class="tagline">Restaurant Gastronomique</div>
-    <h2>Une Cuisine d'Exception</h2>
-    <p>Des produits frais et locaux sublimés par notre chef pour une expérience culinaire inoubliable.</p>
+    <div class="tagline" id="heroTagline"></div>
+    <h2 id="heroTitle"></h2>
+    <p id="heroSubtitle"></p>
     <div>
-        <a href="#reservation" class="btn btn-primary">Réserver une Table</a>
-        <a href="#carte" class="btn btn-outline">Voir la Carte</a>
+        <a href="#reservation" class="btn btn-primary" id="heroReserveBtn">Reserver une Table</a>
+        <a href="#carte" class="btn btn-outline" id="heroCarteBtn">Voir la Carte</a>
     </div>
 </section>
 
@@ -308,11 +291,10 @@
     <div class="container">
         <div class="about-content">
             <div class="about-text">
-                <h3>Notre Histoire</h3>
-                <p>Depuis 2010, La Belle Assiette vous accueille dans un cadre chaleureux et raffiné. Notre chef, passionné par la cuisine française, sélectionne chaque jour les meilleurs produits du marché.</p>
-                <p>Notre philosophie : des produits frais, de saison, issus de producteurs locaux, sublimés avec créativité et respect des saveurs authentiques.</p>
+                <h3 id="aboutTitle"></h3>
+                <div id="aboutTexts"></div>
             </div>
-            <div class="about-image">🍽️</div>
+            <div class="about-image"></div>
         </div>
     </div>
 </section>
@@ -321,203 +303,46 @@
     <div class="container">
         <h2 class="section-title">Notre Carte</h2>
         <p class="section-subtitle">Produits frais & de saison</p>
-        <div class="menu-grid">
-            <div class="menu-category">
-                <h3>Entrées</h3>
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Velouté de Saison</h4>
-                        <span class="price">9 €</span>
-                    </div>
-                    <p>Soupe de légumes du marché, crème fraîche et croûtons maison</p>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Foie Gras Maison</h4>
-                        <span class="price">16 €</span>
-                    </div>
-                    <p>Mi-cuit, chutney de figues et toast brioché</p>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Salade du Chef</h4>
-                        <span class="price">12 €</span>
-                    </div>
-                    <p>Mesclun, chèvre chaud, noix, miel et vinaigrette balsamique</p>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Tartare de Saumon</h4>
-                        <span class="price">14 €</span>
-                    </div>
-                    <p>Saumon frais, avocat, agrumes et sésame</p>
-                </div>
-            </div>
-
-            <div class="menu-category">
-                <h3>Plats</h3>
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Filet de Boeuf</h4>
-                        <span class="price">26 €</span>
-                    </div>
-                    <p>Race Aubrac, sauce au poivre, gratin dauphinois</p>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Suprême de Volaille</h4>
-                        <span class="price">19 €</span>
-                    </div>
-                    <p>Fermier, jus aux morilles, purée de céleri</p>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Pavé de Saumon</h4>
-                        <span class="price">22 €</span>
-                    </div>
-                    <p>Label Rouge, beurre blanc, riz pilaf et légumes croquants</p>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Risotto du Moment</h4>
-                        <span class="price">18 €</span>
-                    </div>
-                    <p>Selon l'inspiration du chef et les produits du marché</p>
-                </div>
-            </div>
-
-            <div class="menu-category">
-                <h3>Desserts</h3>
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Fondant au Chocolat</h4>
-                        <span class="price">10 €</span>
-                    </div>
-                    <p>Chocolat Valrhona 70%, coeur coulant, glace vanille</p>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Crème Brûlée</h4>
-                        <span class="price">9 €</span>
-                    </div>
-                    <p>Vanille de Madagascar, caramel craquant</p>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Tarte Tatin</h4>
-                        <span class="price">10 €</span>
-                    </div>
-                    <p>Pommes caramélisées, pâte feuilletée, crème fraîche</p>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Assiette de Fromages</h4>
-                        <span class="price">11 €</span>
-                    </div>
-                    <p>Sélection affinée par notre fromager</p>
-                </div>
-            </div>
-        </div>
+        <div class="menu-grid" id="menuGrid"></div>
     </div>
 </section>
 
 <section class="formules" id="formules">
     <div class="container">
         <h2 class="section-title">Nos Formules</h2>
-        <p class="section-subtitle">Du lundi au vendredi, le midi</p>
-        <div class="formules-grid">
-            <div class="formule-card">
-                <h3>Express</h3>
-                <div class="price">16 €</div>
-                <ul>
-                    <li>Plat du jour</li>
-                    <li>Café gourmand</li>
-                </ul>
-            </div>
-            <div class="formule-card">
-                <h3>Déjeuner</h3>
-                <div class="price">24 €</div>
-                <ul>
-                    <li>Entrée + Plat</li>
-                    <li>ou Plat + Dessert</li>
-                    <li>Café inclus</li>
-                </ul>
-            </div>
-            <div class="formule-card">
-                <h3>Gourmand</h3>
-                <div class="price">32 €</div>
-                <ul>
-                    <li>Entrée</li>
-                    <li>Plat</li>
-                    <li>Dessert</li>
-                    <li>Café inclus</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="galerie">
-    <div class="container">
-        <h2 class="section-title">Notre Galerie</h2>
-        <p class="section-subtitle">L'art dans l'assiette</p>
-        <div class="galerie-grid">
-            <div class="galerie-item">🥗</div>
-            <div class="galerie-item">🥩</div>
-            <div class="galerie-item">🍝</div>
-            <div class="galerie-item">🍰</div>
-            <div class="galerie-item">🍷</div>
-            <div class="galerie-item">🧀</div>
-        </div>
+        <p class="section-subtitle" id="formulesSubtitle"></p>
+        <div class="formules-grid" id="formulesGrid"></div>
     </div>
 </section>
 
 <section class="avis" id="avis">
     <div class="container">
         <h2 class="section-title">Avis Clients</h2>
-        <p class="section-subtitle">Ils ont aimé leur expérience</p>
-        <div class="avis-grid">
-            <div class="avis-card">
-                <span class="stars">★★★★★</span>
-                <p>Un repas exceptionnel du début à la fin. Le filet de boeuf était parfaitement cuit et le fondant au chocolat divin. Service impeccable.</p>
-                <div class="author">— Pierre D.</div>
-            </div>
-            <div class="avis-card">
-                <span class="stars">★★★★★</span>
-                <p>Cadre magnifique, cuisine raffinée et un accueil chaleureux. La formule déjeuner est un excellent rapport qualité-prix. On y retourne !</p>
-                <div class="author">— Claire B.</div>
-            </div>
-            <div class="avis-card">
-                <span class="stars">★★★★★</span>
-                <p>Nous avons fêté notre anniversaire ici. L'équipe nous a réservé une attention particulière. Les plats sont savoureux et généreux.</p>
-                <div class="author">— Jean & Marie F.</div>
-            </div>
-        </div>
+        <p class="section-subtitle">Ils ont aime leur experience</p>
+        <div class="avis-grid" id="avisGrid"></div>
     </div>
 </section>
 
 <section class="reservation" id="reservation">
     <div class="container">
-        <h2 class="section-title">Réserver une Table</h2>
-        <p class="section-subtitle">Par téléphone ou en ligne</p>
+        <h2 class="section-title">Reserver une Table</h2>
+        <p class="section-subtitle">Par telephone ou en ligne</p>
         <div class="reservation-grid">
             <div class="reservation-info">
                 <h3>Nous Trouver</h3>
-                <p>📍 8 Place du Marché, 75000 Paris</p>
-                <p>📞 01 00 00 00 00</p>
-                <p>📧 reservation@labelleassiette.fr</p>
+                <p id="contactAddress"></p>
+                <p><a href="#" id="contactPhone" style="color:#ccc;text-decoration:none;"></a></p>
+                <p><a href="#" id="contactEmail" style="color:#ccc;text-decoration:none;"></a></p>
                 <div class="horaires">
                     <h3>Horaires</h3>
                     <table>
-                        <tr><td>Lundi</td><td>Fermé</td></tr>
-                        <tr><td>Mardi - Samedi</td><td>12h - 14h | 19h - 22h</td></tr>
-                        <tr><td>Dimanche</td><td>12h - 14h30</td></tr>
+                        <tbody id="horairesTable"></tbody>
                     </table>
                 </div>
             </div>
             <form>
                 <input type="text" placeholder="Votre nom" required>
-                <input type="tel" placeholder="Votre téléphone" required>
+                <input type="tel" placeholder="Votre telephone" required>
                 <input type="email" placeholder="Votre email">
                 <input type="date" required>
                 <select>
@@ -530,19 +355,20 @@
                 </select>
                 <select>
                     <option value="">Service</option>
-                    <option>Déjeuner (12h - 14h)</option>
-                    <option>Dîner (19h - 22h)</option>
+                    <option>Dejeuner (12h - 14h)</option>
+                    <option>Diner (19h - 22h)</option>
                 </select>
-                <textarea placeholder="Demande particulière (allergies, occasion spéciale...)"></textarea>
-                <button type="submit">Réserver</button>
+                <textarea placeholder="Demande particuliere (allergies, occasion speciale...)"></textarea>
+                <button type="submit">Reserver</button>
             </form>
         </div>
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2026 La Belle Assiette - Tous droits réservés</p>
+    <p id="footerCopy"></p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>

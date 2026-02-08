@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artisan Pro - Travaux & Rénovation</title>
+    <meta name="description" content="" id="metaDesc">
+    <title>Chargement...</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; }
@@ -129,7 +130,16 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
         .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-        .service-card .icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .service-card .icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 15px;
+            color: #e67e22;
+        }
+        .service-card .icon svg {
+            width: 100%;
+            height: 100%;
+        }
         .service-card h3 { color: #2d2d2d; font-size: 1.15rem; margin-bottom: 10px; }
         .service-card p { color: #777; line-height: 1.7; font-size: 0.95rem; }
 
@@ -160,7 +170,7 @@
         .step h3 { color: #2d2d2d; margin-bottom: 8px; }
         .step p { color: #888; line-height: 1.6; font-size: 0.95rem; }
 
-        /* Réalisations */
+        /* Realisations */
         .realisations { background: #2d2d2d; color: white; }
         .realisations .section-title { color: white; }
         .realisations .section-subtitle { color: #ccc; }
@@ -179,7 +189,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
+            color: rgba(255,255,255,0.5);
+        }
+        .realisation-img svg {
+            width: 64px;
+            height: 64px;
         }
         .realisation-info {
             padding: 20px;
@@ -210,7 +224,7 @@
             padding: 30px;
             border-bottom: 3px solid #e67e22;
         }
-        .avis-card .stars { color: #f39c12; font-size: 1rem; margin-bottom: 12px; display: block; }
+        .avis-card .stars { color: #f39c12; font-size: 1rem; margin-bottom: 12px; display: flex; gap: 2px; }
         .avis-card p { color: #555; line-height: 1.7; font-style: italic; margin-bottom: 15px; }
         .avis-card .author { font-weight: 600; color: #2d2d2d; font-size: 0.9rem; }
         .avis-card .project { color: #e67e22; font-size: 0.85rem; }
@@ -228,7 +242,16 @@
             transition: border-color 0.3s;
         }
         .garantie:hover { border-color: #e67e22; }
-        .garantie .icon { font-size: 2.5rem; margin-bottom: 12px; }
+        .garantie .icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 12px;
+            color: #e67e22;
+        }
+        .garantie .icon svg {
+            width: 100%;
+            height: 100%;
+        }
         .garantie h3 { color: #2d2d2d; margin-bottom: 8px; font-size: 1.05rem; }
         .garantie p { color: #888; font-size: 0.9rem; line-height: 1.6; }
 
@@ -249,7 +272,17 @@
             margin-bottom: 20px;
             font-size: 0.95rem;
         }
-        .contact-info p { margin-bottom: 14px; color: #ccc; font-size: 1.05rem; }
+        .contact-info p,
+        .contact-info a {
+            margin-bottom: 14px;
+            color: #ccc;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .contact-info a:hover { color: #e67e22; }
         .zone { margin-top: 25px; }
         .zone ul { list-style: none; }
         .zone ul li { padding: 6px 0; color: #aaa; }
@@ -304,10 +337,10 @@
 
 <header>
     <div class="container">
-        <h1>Artisan<span>Pro</span></h1>
+        <h1 id="headerName"></h1>
         <nav>
             <a href="#services">Services</a>
-            <a href="#realisations">Réalisations</a>
+            <a href="#realisations">Realisations</a>
             <a href="#garanties">Garanties</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -315,134 +348,40 @@
 </header>
 
 <section class="hero">
-    <div class="badge">Artisan certifié RGE & Qualibat</div>
-    <h2>Travaux & <strong>Rénovation</strong></h2>
-    <p>Artisan qualifié depuis 20 ans. Maçonnerie, peinture, carrelage, isolation et rénovation complète. Devis gratuit sous 48h.</p>
+    <div class="badge" id="heroBadge"></div>
+    <h2 id="heroTitle"></h2>
+    <p id="heroSubtitle"></p>
     <div class="cta-buttons">
-        <a href="tel:+33600000000" class="btn btn-primary">Appeler : 06 00 00 00 00</a>
+        <a href="#" class="btn btn-primary" id="heroCTAPhone"></a>
         <a href="#contact" class="btn btn-outline">Devis Gratuit</a>
     </div>
 </section>
 
 <div class="trust-bar">
-    <div class="container">
-        <div class="trust-item">
-            <span class="number">20+</span>
-            <span class="label">Ans d'expérience</span>
-        </div>
-        <div class="trust-item">
-            <span class="number">850+</span>
-            <span class="label">Chantiers réalisés</span>
-        </div>
-        <div class="trust-item">
-            <span class="number">100%</span>
-            <span class="label">Clients satisfaits</span>
-        </div>
-        <div class="trust-item">
-            <span class="number">10 ans</span>
-            <span class="label">Garantie décennale</span>
-        </div>
-    </div>
+    <div class="container" id="trustBar"></div>
 </div>
 
 <section class="services" id="services">
     <div class="container">
         <h2 class="section-title">Nos <strong>Services</strong></h2>
-        <p class="section-subtitle">Tous corps de métier pour vos travaux intérieurs et extérieurs</p>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="icon">🧱</div>
-                <h3>Maçonnerie</h3>
-                <p>Construction, extension, murs porteurs, ouvertures, ravalement de façade et réparations structurelles.</p>
-            </div>
-            <div class="service-card">
-                <div class="icon">🎨</div>
-                <h3>Peinture & Décoration</h3>
-                <p>Peinture intérieure et extérieure, papier peint, enduits décoratifs, lasure et traitement bois.</p>
-            </div>
-            <div class="service-card">
-                <div class="icon">🔲</div>
-                <h3>Carrelage & Sol</h3>
-                <p>Pose de carrelage, faïence, parquet, sol vinyle et chape. Salle de bain, cuisine et terrasse.</p>
-            </div>
-            <div class="service-card">
-                <div class="icon">🏗️</div>
-                <h3>Rénovation Complète</h3>
-                <p>Rénovation de maison et appartement de A à Z. Coordination de tous les corps de métier.</p>
-            </div>
-            <div class="service-card">
-                <div class="icon">🧊</div>
-                <h3>Isolation</h3>
-                <p>Isolation thermique et phonique : combles, murs, sols. Certifié RGE pour vos aides financières.</p>
-            </div>
-            <div class="service-card">
-                <div class="icon">🏡</div>
-                <h3>Aménagement Extérieur</h3>
-                <p>Terrasse, clôture, muret, allée et aménagement paysager. Embellissez vos espaces extérieurs.</p>
-            </div>
-        </div>
+        <p class="section-subtitle">Tous corps de metier pour vos travaux interieurs et exterieurs</p>
+        <div class="services-grid" id="servicesGrid"></div>
     </div>
 </section>
 
 <section id="process">
     <div class="container">
-        <h2 class="section-title">Comment ça <strong>Marche</strong> ?</h2>
-        <p class="section-subtitle">Un accompagnement de A à Z pour vos projets</p>
-        <div class="process-steps">
-            <div class="step">
-                <div class="number">1</div>
-                <h3>Premier Contact</h3>
-                <p>Appelez-nous ou remplissez le formulaire. Nous vous recontactons sous 24h.</p>
-            </div>
-            <div class="step">
-                <div class="number">2</div>
-                <h3>Visite & Devis</h3>
-                <p>Nous nous déplaçons gratuitement pour évaluer vos travaux et vous remettre un devis détaillé.</p>
-            </div>
-            <div class="step">
-                <div class="number">3</div>
-                <h3>Réalisation</h3>
-                <p>Nos artisans réalisent vos travaux dans les règles de l'art, avec un suivi régulier.</p>
-            </div>
-            <div class="step">
-                <div class="number">4</div>
-                <h3>Réception</h3>
-                <p>Inspection finale ensemble. Vous ne payez le solde qu'une fois pleinement satisfait.</p>
-            </div>
-        </div>
+        <h2 class="section-title">Comment ca <strong>Marche</strong> ?</h2>
+        <p class="section-subtitle">Un accompagnement de A a Z pour vos projets</p>
+        <div class="process-steps" id="processSteps"></div>
     </div>
 </section>
 
 <section class="realisations" id="realisations">
     <div class="container">
-        <h2 class="section-title">Nos <strong>Réalisations</strong></h2>
-        <p class="section-subtitle">Quelques projets récents dont nous sommes fiers</p>
-        <div class="realisations-grid">
-            <div class="realisation-card">
-                <div class="realisation-img">🏠</div>
-                <div class="realisation-info">
-                    <h4>Rénovation Maison Ancienne</h4>
-                    <p>Rénovation complète d'une maison de 120m² - 3 mois de travaux</p>
-                    <span class="tag">Rénovation</span>
-                </div>
-            </div>
-            <div class="realisation-card">
-                <div class="realisation-img">🛁</div>
-                <div class="realisation-info">
-                    <h4>Salle de Bain Moderne</h4>
-                    <p>Création d'une salle de bain italienne avec douche à l'italienne</p>
-                    <span class="tag">Carrelage</span>
-                </div>
-            </div>
-            <div class="realisation-card">
-                <div class="realisation-img">🏡</div>
-                <div class="realisation-info">
-                    <h4>Terrasse en Pierre</h4>
-                    <p>Aménagement d'une terrasse de 40m² avec muret et éclairage</p>
-                    <span class="tag">Extérieur</span>
-                </div>
-            </div>
-        </div>
+        <h2 class="section-title">Nos <strong>Realisations</strong></h2>
+        <p class="section-subtitle">Quelques projets recents dont nous sommes fiers</p>
+        <div class="realisations-grid" id="realisationsGrid"></div>
     </div>
 </section>
 
@@ -450,93 +389,40 @@
     <div class="container">
         <h2 class="section-title">Avis <strong>Clients</strong></h2>
         <p class="section-subtitle">La satisfaction de nos clients est notre meilleure carte de visite</p>
-        <div class="avis-grid">
-            <div class="avis-card">
-                <span class="stars">★★★★★</span>
-                <p>Travail soigné et propre. L'équipe a refait entièrement notre salle de bain en une semaine. Résultat impeccable, on recommande les yeux fermés !</p>
-                <div class="author">Marc D.</div>
-                <div class="project">Rénovation salle de bain</div>
-            </div>
-            <div class="avis-card">
-                <span class="stars">★★★★★</span>
-                <p>Très professionnel du début à la fin. Le devis était clair, les délais respectés et la qualité de finition est excellente. Merci pour notre nouvelle terrasse !</p>
-                <div class="author">Nathalie P.</div>
-                <div class="project">Terrasse extérieure</div>
-            </div>
-            <div class="avis-card">
-                <span class="stars">★★★★★</span>
-                <p>Nous avons fait rénover notre appartement complet. Coordination parfaite entre les différents corps de métier. Un vrai chef d'orchestre !</p>
-                <div class="author">Laurent & Sophie B.</div>
-                <div class="project">Rénovation appartement</div>
-            </div>
-        </div>
+        <div class="avis-grid" id="avisGrid"></div>
     </div>
 </section>
 
 <section id="garanties">
     <div class="container">
         <h2 class="section-title">Nos <strong>Garanties</strong></h2>
-        <p class="section-subtitle">Votre tranquillité est notre priorité</p>
-        <div class="garanties-grid">
-            <div class="garantie">
-                <div class="icon">🛡️</div>
-                <h3>Garantie Décennale</h3>
-                <p>Assurance décennale couvrant tous nos travaux pendant 10 ans.</p>
-            </div>
-            <div class="garantie">
-                <div class="icon">📋</div>
-                <h3>Devis Détaillé</h3>
-                <p>Devis gratuit, transparent et sans surprise. Chaque poste est détaillé.</p>
-            </div>
-            <div class="garantie">
-                <div class="icon">🏅</div>
-                <h3>Certifié RGE</h3>
-                <p>Certification RGE pour vos travaux d'isolation. Éligible aux aides de l'État.</p>
-            </div>
-            <div class="garantie">
-                <div class="icon">🤝</div>
-                <h3>Paiement au Résultat</h3>
-                <p>Le solde n'est dû qu'après réception et validation des travaux.</p>
-            </div>
-        </div>
+        <p class="section-subtitle">Votre tranquillite est notre priorite</p>
+        <div class="garanties-grid" id="garantiesGrid"></div>
     </div>
 </section>
 
 <section class="contact" id="contact">
     <div class="container">
         <h2 class="section-title">Demander un <strong>Devis</strong></h2>
-        <p class="section-subtitle">Gratuit et sans engagement - Réponse sous 48h</p>
+        <p class="section-subtitle">Gratuit et sans engagement - Reponse sous 48h</p>
         <div class="contact-grid">
             <div class="contact-info">
-                <h3>Coordonnées</h3>
-                <p>📍 15 Rue des Artisans, 75000 Paris</p>
-                <p>📞 06 00 00 00 00</p>
-                <p>📧 contact@artisanpro.fr</p>
-                <p>🕐 Lun - Ven : 7h30 - 18h | Sam : 8h - 12h</p>
+                <h3>Coordonnees</h3>
+                <p id="contactAddress"></p>
+                <a href="#" id="contactPhone"></a>
+                <a href="#" id="contactEmail"></a>
+                <p id="contactHours"></p>
                 <div class="zone">
                     <h3>Zone d'Intervention</h3>
-                    <ul>
-                        <li>Paris et toute l'Île-de-France</li>
-                        <li>Déplacement gratuit sous 30 km</li>
-                        <li>Au-delà : nous consulter</li>
-                    </ul>
+                    <ul id="zoneList"></ul>
                 </div>
             </div>
             <form>
                 <input type="text" placeholder="Votre nom" required>
-                <input type="tel" placeholder="Votre téléphone" required>
+                <input type="tel" placeholder="Votre telephone" required>
                 <input type="email" placeholder="Votre email" required>
-                <select>
-                    <option value="">Type de travaux</option>
-                    <option>Maçonnerie</option>
-                    <option>Peinture / Décoration</option>
-                    <option>Carrelage / Sol</option>
-                    <option>Rénovation complète</option>
-                    <option>Isolation</option>
-                    <option>Aménagement extérieur</option>
-                    <option>Autre</option>
-                </select>
-                <textarea placeholder="Décrivez votre projet (surface, type de travaux, délai souhaité...)"></textarea>
+                <select id="serviceSelect"></select>
+                <textarea placeholder="Decrivez votre projet (surface, type de travaux, delai souhaite...)"></textarea>
                 <button type="submit">Envoyer ma Demande de Devis</button>
             </form>
         </div>
@@ -544,8 +430,9 @@
 </section>
 
 <footer>
-    <p>&copy; 2026 ArtisanPro - Tous droits réservés | SIRET : 000 000 000 00000 | Garantie décennale | Certifié RGE & Qualibat</p>
+    <p id="footerText"></p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>

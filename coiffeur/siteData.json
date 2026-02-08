@@ -1,4 +1,4 @@
-var SITE_DATA = {
+{
   "name": "L'Atelier de Claire",
   "category": "Salon de coiffure",
   "phone": "+33 1 42 36 78 90",
@@ -49,4 +49,4 @@ var SITE_DATA = {
     { "name": "Thomas Bernard", "role": "Client fidele", "text": "Meilleur coiffeur de Paris. La coupe est parfaite, l'ambiance est agreable et les prix sont corrects pour la qualite du service. J'y retourne chaque mois.", "image": "images/testimonial-2.jpg" },
     { "name": "Sophie Laurent", "role": "Cliente reguliere", "text": "Tres satisfaite de mon balayage ! Le resultat est naturel et lumineux. Le salon est magnifique et l'equipe tres professionnelle.", "image": "images/testimonial-3.jpg" }
   ]
-};
+}

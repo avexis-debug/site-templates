@@ -1,4 +1,4 @@
-var SITE_DATA = {
+{
   "name": "BarberShop",
   "category": "Barbier",
   "phone": "+33 1 42 36 78 90",
@@ -51,4 +51,4 @@ var SITE_DATA = {
     { "src": "images/gallery-3.jpg", "alt": "Rasage traditionnel" },
     { "src": "images/gallery-4.jpg", "alt": "Degrade moderne" }
   ]
-};
+}

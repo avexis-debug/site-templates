@@ -1,0 +1,65 @@
+{
+  "name": "La Belle Assiette",
+  "category": "Restaurant Gastronomique",
+  "phone": "+33 1 00 00 00 00",
+  "phoneDisplay": "01 00 00 00 00",
+  "email": "reservation@labelleassiette.fr",
+  "address": "8 Place du Marche, 75000 Paris",
+  "city": "Paris",
+  "description": "Restaurant gastronomique au coeur de Paris. Des produits frais et locaux sublimes par notre chef pour une experience culinaire inoubliable.",
+  "metaDescription": "La Belle Assiette - Restaurant gastronomique a Paris. Cuisine francaise raffinee, produits frais et de saison. Reservez au 01 00 00 00 00.",
+  "accentColor": "#c0392b",
+  "heroTagline": "Restaurant Gastronomique",
+  "heroTitle": "Une Cuisine d'Exception",
+  "heroSubtitle": "Des produits frais et locaux sublimes par notre chef pour une experience culinaire inoubliable.",
+  "aboutTitle": "Notre Histoire",
+  "aboutTexts": [
+    "Depuis 2010, La Belle Assiette vous accueille dans un cadre chaleureux et raffine. Notre chef, passionne par la cuisine francaise, selectionne chaque jour les meilleurs produits du marche.",
+    "Notre philosophie : des produits frais, de saison, issus de producteurs locaux, sublimes avec creativite et respect des saveurs authentiques."
+  ],
+  "menu": [
+    {
+      "category": "Entrees",
+      "items": [
+        { "name": "Veloute de Saison", "desc": "Soupe de legumes du marche, creme fraiche et croutons maison", "price": "9" },
+        { "name": "Foie Gras Maison", "desc": "Mi-cuit, chutney de figues et toast brioche", "price": "16" },
+        { "name": "Salade du Chef", "desc": "Mesclun, chevre chaud, noix, miel et vinaigrette balsamique", "price": "12" },
+        { "name": "Tartare de Saumon", "desc": "Saumon frais, avocat, agrumes et sesame", "price": "14" }
+      ]
+    },
+    {
+      "category": "Plats",
+      "items": [
+        { "name": "Filet de Boeuf", "desc": "Race Aubrac, sauce au poivre, gratin dauphinois", "price": "26" },
+        { "name": "Supreme de Volaille", "desc": "Fermier, jus aux morilles, puree de celeri", "price": "19" },
+        { "name": "Pave de Saumon", "desc": "Label Rouge, beurre blanc, riz pilaf et legumes croquants", "price": "22" },
+        { "name": "Risotto du Moment", "desc": "Selon l'inspiration du chef et les produits du marche", "price": "18" }
+      ]
+    },
+    {
+      "category": "Desserts",
+      "items": [
+        { "name": "Fondant au Chocolat", "desc": "Chocolat Valrhona 70%, coeur coulant, glace vanille", "price": "10" },
+        { "name": "Creme Brulee", "desc": "Vanille de Madagascar, caramel craquant", "price": "9" },
+        { "name": "Tarte Tatin", "desc": "Pommes caramelisees, pate feuilletee, creme fraiche", "price": "10" },
+        { "name": "Assiette de Fromages", "desc": "Selection affinee par notre fromager", "price": "11" }
+      ]
+    }
+  ],
+  "formules": [
+    { "title": "Express", "price": "16", "items": ["Plat du jour", "Cafe gourmand"] },
+    { "title": "Dejeuner", "price": "24", "items": ["Entree + Plat", "ou Plat + Dessert", "Cafe inclus"] },
+    { "title": "Gourmand", "price": "32", "items": ["Entree", "Plat", "Dessert", "Cafe inclus"] }
+  ],
+  "formulesSubtitle": "Du lundi au vendredi, le midi",
+  "testimonials": [
+    { "name": "Pierre D.", "text": "Un repas exceptionnel du debut a la fin. Le filet de boeuf etait parfaitement cuit et le fondant au chocolat divin. Service impeccable." },
+    { "name": "Claire B.", "text": "Cadre magnifique, cuisine raffinee et un accueil chaleureux. La formule dejeuner est un excellent rapport qualite-prix. On y retourne !" },
+    { "name": "Jean & Marie F.", "text": "Nous avons fete notre anniversaire ici. L'equipe nous a reserve une attention particuliere. Les plats sont savoureux et genereux." }
+  ],
+  "horaires": [
+    { "jour": "Lundi", "heures": "Ferme" },
+    { "jour": "Mardi - Samedi", "heures": "12h - 14h | 19h - 22h" },
+    { "jour": "Dimanche", "heures": "12h - 14h30" }
+  ]
+}

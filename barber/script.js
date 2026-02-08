@@ -1,7 +1,5 @@
 /* ========== BARBER TEMPLATE - script.js ========== */
-(function () {
-  var D = window.SITE_DATA;
-  if (!D) return;
+function initSite(D) {
 
   /* ---------- Accent color ---------- */
   if (D.accentColor) {
@@ -308,4 +306,9 @@
     observer.observe(el);
   });
 
-})();
+}
+
+fetch('siteData.json')
+  .then(function (res) { return res.json(); })
+  .then(function (data) { initSite(data); })
+  .catch(function (err) { console.error('Erreur chargement siteData.json:', err); });
