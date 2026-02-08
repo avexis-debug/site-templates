@@ -1,0 +1,54 @@
+var SITE_DATA = {
+  "name": "BarberShop",
+  "category": "Barbier",
+  "phone": "+33 1 42 36 78 90",
+  "phoneDisplay": "01 42 36 78 90",
+  "address": "15 Rue de la Roquette, 75011 Paris",
+  "city": "Paris",
+  "description": "Barbershop haut de gamme au coeur de Paris. Nos barbiers experts maitrisent l'art du grooming masculin avec des techniques traditionnelles et modernes. Coupes, barbes, rasages et soins dans un cadre authentique.",
+  "metaDescription": "BarberShop - Barbier haut de gamme a Paris 11e. Coupes homme, taille de barbe, rasage traditionnel. Prenez rendez-vous au 01 42 36 78 90.",
+  "accentColor": "#e8651a",
+  "rating": 4.9,
+  "reviewCount": 412,
+  "googleMapsUrl": "https://www.google.com/maps/place/15+Rue+de+la+Roquette,+75011+Paris",
+  "hours": "Mar-Sam 9h-20h",
+  "heroImage": "images/hero.jpg",
+  "heroTitle": "Le Meilleur Barbier de la Ville",
+  "heroSubtitle": "Bienvenue chez BarberShop, ou le style rencontre la tradition. Notre equipe de barbiers qualifies se consacre a vous offrir une experience de grooming exceptionnelle.",
+  "aboutImage": "images/about.jpg",
+  "aboutTitle": "Maitriser l'Art du Grooming",
+  "aboutText": "Nous restons a la pointe des dernieres tendances tout en honorant les techniques de barbier intemporelles. Notre mission est simple : que chaque client reparte non seulement avec un look impeccable, mais aussi avec confiance et style.",
+  "servicesImage": "images/services.jpg",
+  "services": [
+    { "icon": "beard", "title": "Taille de Barbe", "desc": "Taille et sculpture de barbe professionnelle avec des produits de soin premium pour un look net et soigne." },
+    { "icon": "scissors", "title": "Coupe Classique", "desc": "Nos barbiers experts proposent des coupes classiques et modernes adaptees a tous les types de cheveux et morphologies." },
+    { "icon": "razor", "title": "Rasage Traditionnel", "desc": "Rasage a l'ancienne au blaireau et au rasoir coupe-chou pour une peau douce et un confort optimal." },
+    { "icon": "styling", "title": "Coiffage & Styling", "desc": "Mise en forme, texturisation et conseils personnalises pour un style qui vous ressemble au quotidien." }
+  ],
+  "whyChooseUs": [
+    { "title": "Ambiance confortable et relaxante", "desc": "Un espace dedie ou le grooming est bien plus qu'un simple service : c'est une experience." },
+    { "title": "Barbiers experimentes", "desc": "Notre equipe hautement qualifiee vous garantit un service de qualite superieure a chaque visite." },
+    { "title": "Sante et securite prioritaires", "desc": "Hygiene irrepprochable et protocoles stricts pour votre tranquillite d'esprit." },
+    { "title": "Qualite premium garantie", "desc": "Des produits haut de gamme et des techniques eprouvees pour un resultat impeccable." }
+  ],
+  "whyImage": "images/why.jpg",
+  "testimonials": [
+    { "name": "Marc Leroy", "role": "Client fidele", "text": "Meilleur barbier de Paris ! La coupe est toujours parfaite et l'ambiance est top. Je ne vais nulle part ailleurs depuis 3 ans.", "image": "images/testimonial-1.jpg" },
+    { "name": "David Costa", "role": "Client regulier", "text": "Service impeccable du debut a la fin. Le rasage traditionnel est une experience unique. Je recommande a 100%.", "image": "images/testimonial-2.jpg" }
+  ],
+  "faq": [
+    { "q": "Quels services proposez-vous ?", "a": "Nous proposons des coupes homme, tailles de barbe, rasages traditionnels, soins capillaires et coiffage. Chaque prestation est realisee avec des produits professionnels." },
+    { "q": "Combien de temps dure une coupe ?", "a": "Comptez environ 30 minutes pour une coupe classique et 45 minutes pour une coupe + barbe. Le rasage traditionnel prend environ 30 minutes." },
+    { "q": "Faut-il prendre rendez-vous ?", "a": "Nous acceptons les clients avec et sans rendez-vous. Cependant, nous recommandons de prendre rendez-vous pour garantir votre creneau." },
+    { "q": "Proposez-vous des services pour enfants ?", "a": "Oui, nous accueillons les enfants a partir de 5 ans. Nos barbiers savent mettre les plus jeunes a l'aise." },
+    { "q": "Quels moyens de paiement acceptez-vous ?", "a": "Nous acceptons les especes, les cartes bancaires (Visa, Mastercard) et le paiement sans contact." },
+    { "q": "Comment vous contacter ?", "a": "Vous pouvez nous appeler directement ou passer au salon. Nous sommes ouverts du mardi au samedi." }
+  ],
+  "ctaImage": "images/cta-bg.jpg",
+  "gallery": [
+    { "src": "images/gallery-1.jpg", "alt": "Coupe homme tendance" },
+    { "src": "images/gallery-2.jpg", "alt": "Taille de barbe" },
+    { "src": "images/gallery-3.jpg", "alt": "Rasage traditionnel" },
+    { "src": "images/gallery-4.jpg", "alt": "Degrade moderne" }
+  ]
+};
