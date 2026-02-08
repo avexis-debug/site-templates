@@ -35,10 +35,9 @@ function svgIcon(name, size, color) {
 
 // --- Main ---
 document.addEventListener('DOMContentLoaded', function () {
-  fetch('siteData.json')
-    .then(function (r) { return r.json(); })
-    .then(function (d) { initSite(d); })
-    .catch(function (e) { console.error('Erreur chargement siteData.json:', e); });
+  if (typeof SITE_DATA !== 'undefined') {
+    initSite(SITE_DATA);
+  }
 });
 
 function initSite(d) {

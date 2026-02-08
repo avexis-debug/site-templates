@@ -1,4 +1,4 @@
-{
+var SITE_DATA = {
   "name": "L'Atelier de Claire",
   "category": "Salon de coiffure",
   "phone": "+33 1 42 36 78 90",
@@ -13,10 +13,10 @@
   "reviewCount": 247,
   "googleMapsUrl": "https://www.google.com/maps/place/27+Rue+du+Faubourg+Saint-Antoine,+75011+Paris",
   "hours": "Mar-Sam 9h-19h",
-  "heroImage": "/images/hero.jpg",
+  "heroImage": "images/hero.jpg",
   "heroTitle": "Sublimez Votre Chevelure",
   "heroSubtitle": "Bienvenue chez L'Atelier de Claire ! Le meilleur salon de coiffure de Paris.",
-  "aboutImage": "/images/about.jpg",
+  "aboutImage": "images/about.jpg",
   "aboutTexts": [
     "Situe au coeur de Paris, notre salon vous accueille dans un cadre elegant et chaleureux. Nos coiffeurs experts sont a l'ecoute de vos envies pour sublimer votre style.",
     "Nous utilisons des produits professionnels de haute qualite et des techniques innovantes pour un resultat impeccable. Que ce soit pour une coupe, une coloration ou un soin capillaire, nous mettons notre savoir-faire a votre service."
@@ -31,22 +31,22 @@
     { "icon": "styling", "title": "Coiffure", "desc": "Mise en forme elegante, brushing, chignons et coiffures evenementielles pour toutes les occasions." }
   ],
   "gallery": [
-    { "src": "/images/gallery-1.jpg", "alt": "Coupe femme moderne avec balayage blond", "label": "Coupe Femme", "count": "200 Styles" },
-    { "src": "/images/gallery-2.jpg", "alt": "Coloration cuivree sur cheveux longs" },
-    { "src": "/images/gallery-3.jpg", "alt": "Coupe homme tendance avec degrade" },
-    { "src": "/images/gallery-4.jpg", "alt": "Chignon elegant pour mariage" },
-    { "src": "/images/gallery-5.jpg", "alt": "Balayage naturel lumineux" }
+    { "src": "images/gallery-1.jpg", "alt": "Coupe femme moderne avec balayage blond", "label": "Coupe Femme", "count": "200 Styles" },
+    { "src": "images/gallery-2.jpg", "alt": "Coloration cuivree sur cheveux longs" },
+    { "src": "images/gallery-3.jpg", "alt": "Coupe homme tendance avec degrade" },
+    { "src": "images/gallery-4.jpg", "alt": "Chignon elegant pour mariage" },
+    { "src": "images/gallery-5.jpg", "alt": "Balayage naturel lumineux" }
   ],
   "team": [
-    { "name": "Claire Martin", "role": "Directrice & Coloriste", "image": "/images/team-1.jpg" },
-    { "name": "Sophie Duval", "role": "Coiffeuse Senior", "image": "/images/team-2.jpg" },
-    { "name": "Lucas Petit", "role": "Coiffeur Styliste", "image": "/images/team-3.jpg" }
+    { "name": "Claire Martin", "role": "Directrice & Coloriste", "image": "images/team-1.jpg" },
+    { "name": "Sophie Duval", "role": "Coiffeuse Senior", "image": "images/team-2.jpg" },
+    { "name": "Lucas Petit", "role": "Coiffeur Styliste", "image": "images/team-3.jpg" }
   ],
-  "ctaImage": "/images/cta-bg.jpg",
+  "ctaImage": "images/cta-bg.jpg",
   "ctaText": "Notre salon haut de gamme est concu pour sublimer votre beaute. Que vous souhaitiez une coupe, une coloration ou un soin, notre equipe est la pour vous.",
   "testimonials": [
-    { "name": "Marie Dupont", "role": "Cliente reguliere", "text": "Un salon exceptionnel ! Claire et son equipe sont a l'ecoute et de tres bon conseil. Ma coloration est exactement ce que je voulais. Je recommande vivement.", "image": "/images/testimonial-1.jpg" },
-    { "name": "Thomas Bernard", "role": "Client fidele", "text": "Meilleur coiffeur de Paris. La coupe est parfaite, l'ambiance est agreable et les prix sont corrects pour la qualite du service. J'y retourne chaque mois.", "image": "/images/testimonial-2.jpg" },
-    { "name": "Sophie Laurent", "role": "Cliente reguliere", "text": "Tres satisfaite de mon balayage ! Le resultat est naturel et lumineux. Le salon est magnifique et l'equipe tres professionnelle.", "image": "/images/testimonial-3.jpg" }
+    { "name": "Marie Dupont", "role": "Cliente reguliere", "text": "Un salon exceptionnel ! Claire et son equipe sont a l'ecoute et de tres bon conseil. Ma coloration est exactement ce que je voulais. Je recommande vivement.", "image": "images/testimonial-1.jpg" },
+    { "name": "Thomas Bernard", "role": "Client fidele", "text": "Meilleur coiffeur de Paris. La coupe est parfaite, l'ambiance est agreable et les prix sont corrects pour la qualite du service. J'y retourne chaque mois.", "image": "images/testimonial-2.jpg" },
+    { "name": "Sophie Laurent", "role": "Cliente reguliere", "text": "Tres satisfaite de mon balayage ! Le resultat est naturel et lumineux. Le salon est magnifique et l'equipe tres professionnelle.", "image": "images/testimonial-3.jpg" }
   ]
-}
+};
